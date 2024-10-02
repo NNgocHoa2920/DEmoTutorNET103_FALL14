@@ -35,5 +35,33 @@ namespace DemoBuoi1.Controllers
             return RedirectToAction("Index");//chuyển về trang index sau khi add xong
         }
 
+        [HttpGet]
+
+        public IActionResult Edit(int id)
+        {
+            var sinhVienEdit = _svDAL.GetSinhVienByID(id);
+            return View(sinhVienEdit);
+        }
+        [HttpPost]
+        public IActionResult Edit(SinhVien sv)
+        {
+            _svDAL.UpdateSinnhVien(sv);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            _svDAL.DeleteSV(id);
+            return RedirectToAction("index");
+        }
+        public IActionResult Details(int id)
+        {
+            var svDetails = _svDAL.GetSinhVienByID(id);
+            return View(svDetails);
+
+        }    
+
+
     }
 }

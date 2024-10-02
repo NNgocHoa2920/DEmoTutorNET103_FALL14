@@ -62,5 +62,75 @@ namespace DemoBuoi1.Models
             }
 
         }
+        ///sửa  1 sinh viên
+        public void UpdateSinnhVien(SinhVien sv)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                string query = "UPDATE SINHVIEN SET NAME =@NAME, GENDER = @GENDER WHERE ID = @ID ";
+                SqlCommand command = new SqlCommand(query,con);
+
+                //THÊM CÁC THAM SỐ CHO CÂU LỆNH
+                command.Parameters.AddWithValue("@Id", sv.Id);
+                command.Parameters.AddWithValue("@Name", sv.Name);
+                command.Parameters.AddWithValue("@Gender", sv.Gender);
+
+
+                //thực thu
+                command.ExecuteNonQuery(); //thực thi caauu lệnh sql
+                con.Close();
+
+            }
+        }
+        //Xóa
+
+        public void DeleteSV(int Id)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("DELETE FROM SINHVIEN WHERE ID= @ID", con);
+                cmd.Parameters.AddWithValue("@Id", Id);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+
+            }
+        }
+
+        //Tìm kiếm
+        public SinhVien GetSinhVienByID(int id)
+        {
+            SinhVien sinhVien = new SinhVien();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+
+                con.Open();
+                string query = "SELECT * FROM SinhVien WHERE ID= @ID";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                cmd.Parameters.AddWithValue("Id", id);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+
+                    sinhVien = new SinhVien();
+                    {
+                        sinhVien.Id = Convert.ToInt32(reader["Id"]);
+                        sinhVien.Name = reader["Name"].ToString();
+                        sinhVien.Gender = reader["Gender"].ToString();
+
+                    };
+
+                    
+                }
+                con.Close();
+            }
+            return sinhVien;
+        }
     }
+
 }

@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Entity_DbFirst_b1.Models
 {
-    //class đại diện cho sql server
     public partial class ADO_TUTORContext : DbContext
     {
         public ADO_TUTORContext()
@@ -17,10 +16,6 @@ namespace Entity_DbFirst_b1.Models
         {
         }
 
-
-        /// <summary>
-        /// dbset đóng vai trò là 1 thực thể = đại diện cho bảng ở trong sql
-        /// </summary>
         public virtual DbSet<SinhVien> SinhViens { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

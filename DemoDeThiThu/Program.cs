@@ -1,13 +1,11 @@
-using Entity_DbFirst_b1.Models;
-using Microsoft.EntityFrameworkCore;
+using DemoDeThiThu.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ADO_TUTORContext>();
-//builder.Services.AddDbContext<ADO_TUTORContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<ThiThu_TutorContext>();
+
 
 var app = builder.Build();
 

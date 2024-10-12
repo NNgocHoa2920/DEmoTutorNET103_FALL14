@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DemoDeThiThu.Models.Sinhvien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tuoi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nganh)
+            </th>
+            <th>
+                 Ten Lop
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tuoi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nganh)
+            </td>
+            <td>
+                @if(item.MaLopNavigation != null) @*  checked xeem lop hoc co du lieu khong *@
+                    {
+                        @item.MaLopNavigation.TenLop
+                    }
+                   
+
+                </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Id}) |
+                    @Html.ActionLink("Details", "Details", new { mssv = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

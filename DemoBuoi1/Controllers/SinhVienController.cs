@@ -9,7 +9,7 @@ namespace DemoBuoi1.Controllers
         //đây là hình thức tiêm DI => hỏi pv
         public SinhVienController(SinhVienDAL svDAL)
         {
-            _svDAL = svDAL; 
+            _svDAL = svDAL;
         }
         //hiển thị ra list
         [HttpGet]
@@ -60,8 +60,10 @@ namespace DemoBuoi1.Controllers
             var svDetails = _svDAL.GetSinhVienByID(id);
             return View(svDetails);
 
-        }    
-
-
+        }
+       
     }
+
+
+    
 }

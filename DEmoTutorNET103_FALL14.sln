@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBuoi1", "DemoBuoi1\DemoBuoi1.csproj", "{4FE177FB-F9EB-4422-808F-17806582A6B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity_DbFirst_b1", "Entity_DbFirst_b1\Entity_DbFirst_b1.csproj", "{5AEE4326-8B69-49B6-A8BB-9109241C36BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity_DbFirst_b1", "Entity_DbFirst_b1\Entity_DbFirst_b1.csproj", "{5AEE4326-8B69-49B6-A8BB-9109241C36BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoDeThiThu", "DemoDeThiThu\DemoDeThiThu.csproj", "{F6F01450-0B51-40C5-95E9-DE25EE85D868}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5AEE4326-8B69-49B6-A8BB-9109241C36BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AEE4326-8B69-49B6-A8BB-9109241C36BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AEE4326-8B69-49B6-A8BB-9109241C36BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6F01450-0B51-40C5-95E9-DE25EE85D868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6F01450-0B51-40C5-95E9-DE25EE85D868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6F01450-0B51-40C5-95E9-DE25EE85D868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6F01450-0B51-40C5-95E9-DE25EE85D868}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

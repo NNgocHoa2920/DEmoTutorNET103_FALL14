@@ -11,6 +11,7 @@ namespace DemoDeThiThu.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+            //kiki
         }
 
         public IActionResult Index()
